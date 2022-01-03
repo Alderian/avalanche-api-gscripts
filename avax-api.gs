@@ -28,7 +28,7 @@ var cacheTimeout = 600;
  * 
  */
 
- var apiURL = "https://api.snowtrace.io/api";
+ var apiAvaxUrl = "https://api.snowtrace.io/api";
 
 /** getAVAXBalance
  * 
@@ -54,7 +54,7 @@ async function getAVAXBalance(avaxAddress, myApiKey, parseOptions, calledTimes =
 
   try {
     Utilities.sleep(Math.random() * 100 + waitInMiliseconds)
-    url = apiURL + "?module=account&action=balance&address=" + avaxAddress + "&tag=latest&apikey=" + myApiKey;
+    url = apiAvaxUrl + "?module=account&action=balance&address=" + avaxAddress + "&tag=latest&apikey=" + myApiKey;
 
     var res = await UrlFetchApp.fetch(url)
     var content = res.getContentText();
@@ -95,7 +95,7 @@ async function getAVAXTokenBalance(avaxAddress, tokenContract, myApiKey, parseOp
 
   try {
     Utilities.sleep(Math.random() * 100 + waitInMiliseconds)
-    url = apiURL + "?module=account&action=tokenbalance&contractaddress=" + tokenContract + "&address=" + avaxAddress + "&tag=latest&apikey=" + myApiKey;
+    url = apiAvaxUrl + "?module=account&action=tokenbalance&contractaddress=" + tokenContract + "&address=" + avaxAddress + "&tag=latest&apikey=" + myApiKey;
 
     var res = await UrlFetchApp.fetch(url)
     var content = res.getContentText();
